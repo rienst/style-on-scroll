@@ -4,7 +4,7 @@ Add classes when the page is scrolled or reaches the top, right from your HTML f
 - Appies 'data-scrollclass' when the page is scrolled and 'data-topclass' when at the top.
 - Supports multiple selectors.
 - Supports multiple classes.
-- Regular classes may match 'data-topclasses' classes to show them on page load.
+- Regular classes may match 'data-topclass' classes to show them on page load.
 
 ## Example usage
 ```html
