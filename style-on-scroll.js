@@ -3,13 +3,13 @@ let wasAtTop = true;
 /**
  * Appies classes depending on the scroll position.
  *
- * Appies 'data-scrollclass' when the element is scrolled, and
+ * Appies 'data-scrollclass' when the page is scrolled, and
  * 'data-topclass' when at the top. Supports multiple classes. Regular classes
  * may match 'data-topclasses' classes to show them on page load.
  *
  * Example usage:
- * <body onscroll="styleOnScroll(''#element .another-element')">
- *   <div id="styleMe" data-topclass="py-5" data-scrollclass="py-3 rounded">
+ * <body onscroll="styleOnScroll('#element .another-element')">
+ *   <div id="element" data-topclass="py-5" data-scrollclass="py-3 rounded">
  *   <div class="another-element px-5" data-topclass="px-5" data-scrollclass="px-3">
  * </body>
  *
