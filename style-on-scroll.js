@@ -5,7 +5,7 @@ let wasAtTop = true;
  *
  * Appies 'data-scrollclass' when the page is scrolled, and
  * 'data-topclass' when at the top. Supports multiple classes. Regular classes
- * may match 'data-topclasses' classes to show them on page load.
+ * may match 'data-topclass' classes to show them on page load.
  *
  * Example usage:
  * <body onscroll="styleOnScroll('#element .another-element')">
