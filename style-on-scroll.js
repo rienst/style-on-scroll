@@ -1,20 +1,21 @@
+/**
+ * True if the page was scrolled when the function was previously executed.
+ *
+ * @type {boolean}
+ */
 let wasAtTop = true;
 
 /**
- * Appies classes depending on the scroll position.
- *
- * Appies 'data-scrollclass' when the page is scrolled, and
- * 'data-topclass' when at the top. Supports multiple classes. Regular classes
- * may match 'data-topclass' classes to show them on page load.
+ * Appies '.scrolled' class when the page is scrolled.
  *
  * Example usage:
  * <body onscroll="styleOnScroll('#element .another-element')">
- *   <div id="element" data-topclass="py-5" data-scrollclass="py-3 rounded">
- *   <div class="another-element px-5" data-topclass="px-5" data-scrollclass="px-3">
+ *   <div id="element">
+ *   <div class="another-element">
  * </body>
  *
- * @author Rien Stenekes
- * @version 1.0
+ * @author  Rien Stenekes
+ * @version 2.0
  *
  * @param {array} selectors The selectors to be used to toggle the classes.
  */
@@ -29,62 +30,32 @@ function styleOnScroll(selectors) {
   /**
    * The selectors to be used to toggle the classes, exploded into an array.
    *
-   * @type {boolean}
+   * @type {array}
    */
-  const selectorsArray = selectors.split(' ');
+  selectors = selectors.split(' ');
 
-  selectorsArray.forEach(selector => {
+  selectors.forEach(selector => {
     /**
      * The element retrieved through the selector.
      *
-     * @type {object}
+     * @type {HTMLElement}
      */
     const element = document.querySelector(selector);
 
     /**
-     * The classes that are applied when the page is scrolled to the top.
-     *
-     * @type {string}
-     */
-    const topClasses = element.dataset.topclass;
-
-    /**
-     * The classes that are applied when the page is scrolled.
-     *
-     * @type {string}
-     */
-    const scrollClasses = element.dataset.scrollclass;
-
-    /**
-     * The classes that are applied when the page is at the top, exploded into
-     * an array.
-     *
-     * @type {array}
-     */
-    const topClassesArray = topClasses.split(' ');
-
-    /**
-     * The classes that are applied when the page is scrolled down, exploded
-     * into an array.
-     *
-     * @type {array}
-     */
-    const scrollClassesArray = scrollClasses.split(' ');
-
-    /**
-     * Adds and removes top and scroll classes if the scroll position left or
-     * reached the top,
+     * Adds and removes '.scrolled' class when the page left or reached the top.
      */
     if (isAtTop !== wasAtTop) {
       if (isAtTop) {
-        topClassesArray.forEach(topClass => element.classList.add(topClass));
-        scrollClassesArray.forEach(scrollClass => element.classList.remove(scrollClass));
+        element.classList.remove('scrolled');
       } else {
-        topClassesArray.forEach(topClass => element.classList.remove(topClass));
-        scrollClassesArray.forEach(scrollClass => element.classList.add(scrollClass));
+        element.classList.add('scrolled');
       }
     }
   });
 
+  /**
+   * Sets wasAtTop for the next time the function runs.
+   */
   wasAtTop = isAtTop;
 }
