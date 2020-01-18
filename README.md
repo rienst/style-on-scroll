@@ -1,5 +1,5 @@
 # Style on scroll
-Appies '.scrolled' class when the page is scrolled.
+Applies '.scrolled' class when the page is scrolled.
 
 ## Example usage
 ```html
