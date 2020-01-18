@@ -6,7 +6,7 @@
 let wasAtTop = true;
 
 /**
- * Appies '.scrolled' class when the page is scrolled.
+ * Applies '.scrolled' class when the page is scrolled.
  *
  * Example usage:
  * <body onscroll="styleOnScroll('#element .another-element')">
