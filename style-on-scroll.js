@@ -17,15 +17,19 @@ let wasAtTop = true;
  * @author  Rien Stenekes
  * @version 2.0
  *
- * @param {array} selectors The selectors to be used to toggle the classes.
+ * @param {array}   selectors The selectors to be used to toggle the classes.
+ * @param {integer} offset    The offset from the top of the document to trigger
+ *                            the class in pixels. Default is zero.
  */
-function styleOnScroll(selectors) {
+function styleOnScroll(selectors, offset = 0) {
   /**
    * True if the page is scrolled.
    *
    * @type {boolean}
    */
-  const isAtTop = window.scrollY === 0;
+  const isAtTop = window.scrollY <= offset;
+
+  console.log(offset);
 
   /**
    * The selectors to be used to toggle the classes, exploded into an array.
