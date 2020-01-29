@@ -29,8 +29,6 @@ function styleOnScroll(selectors, offset = 0) {
    */
   const isAtTop = window.scrollY <= offset;
 
-  console.log(offset);
-
   /**
    * The selectors to be used to toggle the classes, exploded into an array.
    *
