@@ -12,5 +12,3 @@ Applies '.scrolled' class when the page is scrolled.
 ---
 
 Code by Rien Stenekes
-
-[Website](https://www.rienstenekes.nl "rienstenekes.nl")
